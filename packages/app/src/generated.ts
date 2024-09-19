@@ -1,4 +1,8 @@
-import { createReadContract, createWriteContract, createSimulateContract } from '@wagmi/core/codegen';
+import {
+  createReadContract,
+  createWriteContract,
+  createSimulateContract,
+} from '@wagmi/core/codegen'
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // TestContract
@@ -33,14 +37,15 @@ export const testContractAbi = [
     outputs: [],
     stateMutability: 'nonpayable',
   },
-] as const;
+] as const
 
-export const testContractAddress = '0x1234567890123456789012345678901234567890' as const;
+export const testContractAddress =
+  '0x1234567890123456789012345678901234567890' as const
 
 export const testContractConfig = {
   address: testContractAddress,
   abi: testContractAbi,
-} as const;
+} as const
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Action
@@ -52,7 +57,7 @@ export const testContractConfig = {
 export const readTestContract = /*#__PURE__*/ createReadContract({
   abi: testContractAbi,
   address: testContractAddress,
-});
+})
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link testContractAbi}__ and `functionName` set to `"balances"`
@@ -61,7 +66,7 @@ export const readTestContractBalances = /*#__PURE__*/ createReadContract({
   abi: testContractAbi,
   address: testContractAddress,
   functionName: 'balances',
-});
+})
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link testContractAbi}__ and `functionName` set to `"getBalance"`
@@ -70,7 +75,7 @@ export const readTestContractGetBalance = /*#__PURE__*/ createReadContract({
   abi: testContractAbi,
   address: testContractAddress,
   functionName: 'getBalance',
-});
+})
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link testContractAbi}__
@@ -78,7 +83,7 @@ export const readTestContractGetBalance = /*#__PURE__*/ createReadContract({
 export const writeTestContract = /*#__PURE__*/ createWriteContract({
   abi: testContractAbi,
   address: testContractAddress,
-});
+})
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link testContractAbi}__ and `functionName` set to `"deposit"`
@@ -87,7 +92,7 @@ export const writeTestContractDeposit = /*#__PURE__*/ createWriteContract({
   abi: testContractAbi,
   address: testContractAddress,
   functionName: 'deposit',
-});
+})
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link testContractAbi}__ and `functionName` set to `"withdraw"`
@@ -96,7 +101,7 @@ export const writeTestContractWithdraw = /*#__PURE__*/ createWriteContract({
   abi: testContractAbi,
   address: testContractAddress,
   functionName: 'withdraw',
-});
+})
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link testContractAbi}__
@@ -104,22 +109,25 @@ export const writeTestContractWithdraw = /*#__PURE__*/ createWriteContract({
 export const simulateTestContract = /*#__PURE__*/ createSimulateContract({
   abi: testContractAbi,
   address: testContractAddress,
-});
+})
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link testContractAbi}__ and `functionName` set to `"deposit"`
  */
-export const simulateTestContractDeposit = /*#__PURE__*/ createSimulateContract({
-  abi: testContractAbi,
-  address: testContractAddress,
-  functionName: 'deposit',
-});
+export const simulateTestContractDeposit = /*#__PURE__*/ createSimulateContract(
+  {
+    abi: testContractAbi,
+    address: testContractAddress,
+    functionName: 'deposit',
+  },
+)
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link testContractAbi}__ and `functionName` set to `"withdraw"`
  */
-export const simulateTestContractWithdraw = /*#__PURE__*/ createSimulateContract({
-  abi: testContractAbi,
-  address: testContractAddress,
-  functionName: 'withdraw',
-});
+export const simulateTestContractWithdraw =
+  /*#__PURE__*/ createSimulateContract({
+    abi: testContractAbi,
+    address: testContractAddress,
+    functionName: 'withdraw',
+  })
